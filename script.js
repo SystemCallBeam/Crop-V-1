@@ -1,10 +1,10 @@
 let board = Array(8).fill().map(() => Array(8).fill(null)); // สร้างกระดานเปล่า 8x8
-let playerSide = 'bottom'; // กำหนดค่าเริ่มต้นของฝั่งผู้เล่น
+let playerSide = '01'; // กำหนดค่าเริ่มต้นของฝั่งผู้เล่น
 
 // สร้างตัวหมากแต่ละตัวในทีม
 function createPiece(team, name) {
     const piece = document.createElement('div');
-    piece.classList.add('piece', `team-${team}`);
+    piece.classList.add('piece', `team${team}`);
     piece.textContent = name;
     return piece;
 }
@@ -13,11 +13,11 @@ function createPiece(team, name) {
 function setupPieces() {
     for (let i = 0; i < 8; i++) {
         // แถวบนสำหรับทีม B
-        board[0][i] = createPiece('b', `P(B)`);
-        board[1][i] = createPiece('b', `P(B)`);
+        board[0][i] = createPiece('01', `P(B)`);
+        board[1][i] = createPiece('01', `P(B)`);
         // แถวล่างสำหรับทีม W
-        board[6][i] = createPiece('w', `P(W)`);
-        board[7][i] = createPiece('w', `P(W)`);
+        board[6][i] = createPiece('02', `P(W)`);
+        board[7][i] = createPiece('02', `P(W)`);
     }
 }
 
@@ -33,7 +33,7 @@ function renderBoard() {
     boardElement.innerHTML = '';
 
     // กำหนดลำดับการแสดงแถว
-    const rowOrder = playerSide === 'bottom' ? [...board].reverse() : [...board];
+    const rowOrder = playerSide === '01' ? [...board].reverse() : [...board];
 
     rowOrder.forEach((row, i) => {
         row.forEach((piece, j) => {

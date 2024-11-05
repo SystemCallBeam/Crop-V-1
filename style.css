@@ -1,4 +1,4 @@
-#board {
+.board {
     display: grid;
     grid-template-columns: repeat(8, 50px);
     grid-template-rows: repeat(8, 50px);
@@ -25,5 +25,5 @@
     color: white;
     font-weight: bold;
 }
-.team-b { background-color: #3333ff; }  /* สีน้ำเงินสำหรับทีม B */
-.team-w { background-color: #ff3333; }  /* สีแดงสำหรับทีม W */
+.team01 { background-color: #3333ff; }
+.team02 { background-color: #ff3333; }
