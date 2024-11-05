@@ -3,8 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Customizable Chess Board</title>
-    <link rel="stylesheet" href="style.css">
+    <title>Game Board</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <script src="{{ url_for('static', filename='script.js') }}" defer></script>
 </head>
 <body>
     <h2>Select Side:</h2>
@@ -12,7 +13,5 @@
     <button onclick="setPlayerSide('02')">red</button>
 
     <div id="board" class="board"></div>
-
-    <script src="script.js"></script>
 </body>
 </html>
