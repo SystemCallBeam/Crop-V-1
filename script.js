@@ -1,4 +1,5 @@
-let board = Array(8).fill().map(() => Array(8).fill(null)); // สร้างกระดานเปล่า 8x8
+const boardSize = 8
+let board = Array(boardSize).fill().map(() => Array(boardSize).fill(null)); // สร้างกระดานเปล่า 8x8
 let playerSide = '01'; // กำหนดค่าเริ่มต้นของฝั่งผู้เล่น
 
 // สร้างตัวหมากแต่ละตัวในทีม
@@ -11,13 +12,13 @@ function createPiece(team, name) {
 
 // วางหมากในตำแหน่งเริ่มต้น
 function setupPieces() {
-    for (let i = 0; i < 8; i++) {
+    for (let i = 0; i < boardSize; i++) {
         // แถวบนสำหรับทีม B
         board[0][i] = createPiece('01', `P(B)`);
         board[1][i] = createPiece('01', `P(B)`);
         // แถวล่างสำหรับทีม W
-        board[6][i] = createPiece('02', `P(W)`);
-        board[7][i] = createPiece('02', `P(W)`);
+        board[boardSize-2][i] = createPiece('02', `P(W)`);
+        board[boardSize-1][i] = createPiece('02', `P(W)`);
     }
 }
 
